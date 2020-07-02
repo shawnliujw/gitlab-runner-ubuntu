@@ -7,4 +7,9 @@ RUN apt install -y nodejs
 RUN curl -sL https://sentry.io/get-cli/ | bash
 RUN sentry-cli --help
 RUN apt install -y docker.io
-RUN service start docker && docker --version
+RUN docker --version
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
