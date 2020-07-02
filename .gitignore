@@ -62,3 +62,4 @@ typings/
 .idea
 test-checker.sh
 build-checker.sh
+docker-compose.yaml
