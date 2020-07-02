@@ -1,6 +1,8 @@
-FROM shawnliu/kubectl-node:13-12
+FROM ubuntu:18.04
 MAINTAINER Shanw Liu <shawn.jw.liu@gmail.com>
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN apt install nodejs
 RUN node -v
 
 RUN apt-get remove docker docker-engine docker.io containerd runc
