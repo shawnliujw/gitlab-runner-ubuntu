@@ -5,6 +5,7 @@ RUN apt update && apt install -y curl wget
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt install -y nodejs
+RUN npm i -g yarn
 # install sentry-cli
 RUN curl -sL https://sentry.io/get-cli/ | bash
 # install docker
