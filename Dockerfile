@@ -1,10 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER Shanw Liu <shawn.jw.liu@gmail.com>
 
-RUN apt update && apt install -y curl python-software-properties software-properties-common
-#RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-RUN add-apt-repository ppa:chris-lea/node.js
-RUN apt update
+RUN apt update && apt install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt install nodejs
 RUN node -v
 
