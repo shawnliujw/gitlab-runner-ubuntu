@@ -7,13 +7,5 @@ RUN apt install -y nodejs
 RUN node -v
 RUN npm -v
 
-RUN apt-get remove docker docker-engine docker.io containerd runc
-RUN apt-get install -y  \
-        apt-transport-https \
-        ca-certificates \
-        curl \
-        gnupg-agent \
-        software-properties-common
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-RUN apt-get update && apt-get install docker-ce docker-ce-cli containerd.io
-RUN docker --version
+RUN apt install -y docker.io
+RUN systemctl start docker && docker --version
